@@ -1,9 +1,47 @@
-// В этом файле должны быть стили для БЭМ-блока slider, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока slider, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .slider {
 
   $block-name:                &; // #{$block-name}__element
+
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 0;
+    color: transparent;
+    background-color: #e8e8e8;
+
+    &:before {
+      display: inline-block;
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .owl-prev {
+    left: 10px;
+  }
+
+  .owl-next {
+    right: 10px;
+
+    &:before {
+      transform: rotate(-135deg);
+    }
+  }
 
 }

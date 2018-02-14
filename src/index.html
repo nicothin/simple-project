@@ -15,55 +15,75 @@
 <body>
 
   <header class="page-header">
+    <div class="dropdown  dropleft  page-header__lang">
+      <button class="btn btn-outline-light dropdown-toggle" type="button" id="language-select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        English
+      </button>
+      <div class="dropdown-menu" aria-labelledby="language-select">
+        <a class="dropdown-item" href="#">English</a>
+        <a class="dropdown-item" href="#">Spain</a>
+        <a class="dropdown-item" href="#">Русский</a>
+      </div>
+    </div>
     <div class="page-header__text">
       <span class="page-header__uptitle">Our Company</span>
       <h1 class="page-header__title">Bring your ideas to life</h1>
       <p class="page-header__descr">Anything you've even dreamed about is possible to realise just at the moment when you decided to win.</p>
     </div>
+    <svg class="page-header__arrow-svg" id="arrow-bottom" x="0px" y="0px" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592"><path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"></path></svg>
   </header>
 
-  <div class="text-first">
-    Book design is the art of incorporating the content, style, format, design, and sequence of the various components of a book into a coherent whole. In the words of Jan Tschichold, "methods and rules upon which it is impossible to improve, have been developed over centuries. To produce perfect books, these rules have to be brought back to life and applied."
+  <div class="block-text" id="first-content-block">
+    Book design is the art of incorporating the content, style, format, design, and sequence of the various components of a book into a coherent whole. In the words of Jan Tschichold, "methods and rules upon which it is impossible to improve, have been developed over centuries. To produce perfect books, these rules have to be brought back to life and applied."<br>
     Front matter, or preliminaries, is the first section of a book, and is usually the smallest section in terms of the number of pages. Each page is counted, but no folio or page number is expressed, or printed, on either display pages or blank pages.
   </div>
 
   <div class="slider">
     <div class="slider__inner  owl-carousel" id="photo-slider">
-      <section class="slider__item">
-        <img src="../blocks/slider/img/photo.jpg" alt="" class="slider__img">
-      </section>
-      <section class="slider__item">
-        <img src="../blocks/slider/img/photo.jpg" alt="" class="slider__img">
-      </section>
-      <section class="slider__item">
-        <img src="../blocks/slider/img/photo.jpg" alt="" class="slider__img">
-      </section>
+      <div class="slider__item">
+        <img src="img/photo.jpg" alt="" class="slider__img">
+      </div>
+      <div class="slider__item">
+        <img src="img/photo.jpg" alt="" class="slider__img">
+      </div>
+      <div class="slider__item">
+        <img src="img/photo.jpg" alt="" class="slider__img">
+      </div>
     </div>
   </div>
 
-  <div class="text-second">
-  Book design is the art of incorporating the content, style, format, design, and sequence of the various components of a book into a coherent whole. In the words of Jan Tschichold, "methods and rules upon which it is impossible to improve, have been developed over centuries. To produce perfect books, these rules have to be brought back to life and applied."
-  Front matter, or preliminaries, is the first section of a book, and is usually the smallest section in terms of the number of pages. Each page is counted, but no folio or page number is expressed, or printed, on either display pages or blank pages.
-</div>
+  <div class="block-text">
+    Book design is the art of incorporating the content, style, format, design, and sequence of the various components of a book into a coherent whole. In the words of Jan Tschichold, "methods and rules upon which it is impossible to improve, have been developed over centuries. To produce perfect books, these rules have to be brought back to life and applied."<br>
+    Front matter, or preliminaries, is the first section of a book, and is usually the smallest section in terms of the number of pages. Each page is counted, but no folio or page number is expressed, or printed, on either display pages or blank pages.
+  </div>
 
   <div class="embed-responsive embed-responsive-16by9">
     <iframe class="embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
   </div>
 
-  <div class="text-third">
-  Book design is the art of incorporating the content, style, format, design, and sequence of the various components of a book into a coherent whole. In the words of Jan Tschichold, "methods and rules upon which it is impossible to improve, have been developed over centuries. To produce perfect books, these rules have to be brought back to life and applied."
-  Front matter, or preliminaries, is the first section of a book, and is usually the smallest section in terms of the number of pages. Each page is counted, but no folio or page number is expressed, or printed, on either display pages or blank pages.
+  <div class="block-text">
+    Book design is the art of incorporating the content, style, format, design, and sequence of the various components of a book into a coherent whole. In the words of Jan Tschichold, "methods and rules upon which it is impossible to improve, have been developed over centuries. To produce perfect books, these rules have to be brought back to life and applied."<br>
+    Front matter, or preliminaries, is the first section of a book, and is usually the smallest section in terms of the number of pages. Each page is counted, but no folio or page number is expressed, or printed, on either display pages or blank pages.
   </div>
 
   <footer class="page-footer">
-    <form action="#" class="page-footer__form">
-      <input type="text" placeholder="Ваше имя">
-      <input type="email" placeholder="Электронная почта">
-      <input type="password" placeholder="Пароль">
-      <input type="submit" value="Зарегистрироваться">
-      <p class="page-footer__notice">Нажимая кнопку «Зарегистрироваться», Вы принимаете условия Пользовательского соглашения.</p>
-    </form>
 
+    <div class="page-footer__inner  container">
+      <div class="row">
+        <div class="col-xs-12 col-lg-6">1</div>
+        <div class="col-xs-12 col-lg-6">2</div>
+      </div>
+    </div>
+        <form action="#" class="page-footer__form">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+          </div>
+        </form>
   </footer>
 
   <script src="js/script.min.js"></script>
