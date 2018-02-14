@@ -1,0 +1,13 @@
+// В этом файле должны быть стили для БЭМ-блока player, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.player {
+
+  $block-name:                &; // #{$block-name}__element
+
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}

@@ -6,6 +6,16 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 90px;
+  padding-bottom: 90px;
+
+  @media (min-width: $screen-lg) {
+    max-width: 860px;
+}
+
   .owl-prev,
   .owl-next {
     position: absolute;
@@ -24,24 +34,70 @@
     &:before {
       display: inline-block;
       content: '';
-      width: 10px;
-      height: 10px;
-      border-right: 1px solid #000;
-      border-bottom: 1px solid #000;
-      transform: rotate(-45deg);
+      width: 8px;
+      height: 8px;
+      border-right: 1px solid #3e3e3e;
+      border-bottom: 1px solid #3e3e3e;
+      transform: rotate(135deg);
+
+      @media (min-width: $screen-sm) {
+        width: 11px;
+        height: 11px;
+      }
+    }
+
+    @media (min-width: $screen-sm) {
+      width: 40px;
+      height: 40px;
     }
   }
 
   .owl-prev {
     left: 10px;
+
+    @media (min-width: $screen-sm) {
+      left: -63px;
+    }
+
+    @media (min-width: $screen-lg) {
+      left: -70px;
+    }
+
   }
 
   .owl-next {
     right: 10px;
 
-    &:before {
-      transform: rotate(-135deg);
+    @media (min-width: $screen-sm) {
+      right: -63px;
     }
+
+    @media (min-width: $screen-lg) {
+      right: -70px;
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .owl-dots {
+    display: flex;
+    justify-content: center;
+    padding-top: 26px;
+  }
+
+  .owl-dot {
+    width: 8px;
+    height: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #c7c7c7;
+    border-radius: 100px;
+  }
+
+  .active {
+    background-color: #222;
   }
 
 }
