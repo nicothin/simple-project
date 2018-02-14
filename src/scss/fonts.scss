@@ -1,2 +1,29 @@
 // Подключение своих шрифтов.
 // Не пишите тут ничего, кроме @font-face
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-bolditalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}

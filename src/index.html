@@ -74,24 +74,39 @@
 
   <footer class="page-footer">
 
-    <div class="page-footer__inner  container">
-      <div class="row">
-        <div class="col-xs-12 col-lg-6">1</div>
-        <div class="col-xs-12 col-lg-6">2</div>
+    <div class="page-footer__inner">
+      <div class="page-footer__wrapper">
+        <p class="page-footer__text">This site was made on Tilda — a website builder that<br> helps to create a website without any code</p>
+        <a class="page-footer__button"><span>Create a website</span></a>
+      </div>
+        <div class="page-footer__link-wrapper">
+          <a class="page-footer__link" href="#">Submit a complaint</a>
+          <a class="page-footer__link" href="#">Submit a complaint</a>
+          <a class="page-footer__link" href="#">Submit a complaint</a>
+        </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-lg-6">
+            <form action="#" class="page-footer__form">
+              <div class="form-group">
+                <label for="name">Your name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+              </div>
+            </form>
+          </div>
+          <div class="col-xs-12 col-lg-6">
+            <div id="map" class="page-footer__map"></div>
+          </div>
+        </div>
       </div>
     </div>
-        <form action="#" class="page-footer__form">
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <label for="name">Your name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name">
-          </div>
-        </form>
   </footer>
 
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCTn_8pkid30xLMK_7_2rkI0_MoX3zIqQ&signed_in=true&callback=initMap"></script>
   <script src="js/script.min.js"></script>
 </body>
 
