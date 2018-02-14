@@ -33,6 +33,7 @@
     padding-bottom: 30px;
 
     @media (min-width: $screen-lg) {
+      margin-right: 5px;
       padding-bottom: 0;
     }
   }
@@ -44,7 +45,7 @@
 
   &__text {
     text-align: center;
-    padding-bottom: 5px;
+    padding-bottom: 7px;
     letter-spacing: .2px;
   }
 
@@ -69,7 +70,6 @@
 
   &__wrapper {
     text-align: center;
-    // margin-bottom: 20px;
   }
 
 
@@ -86,10 +86,12 @@
     margin-right: 15px;
     margin-bottom: 7px;
     text-decoration: none;
+    font-size: 13px;
     color: #888;
 
     @media (min-width: $screen-sm) {
       display: inline;
+      color: #666;
     }
   }
 
