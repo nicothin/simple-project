@@ -6,7 +6,7 @@ const fs = require('fs');                // будем работать с фа�
 const mkdirp = require('mkdirp');        // зависимость, должна быть установлена (см. описание выше)
 
 let blockName = process.argv[2];          // получим имя блока
-let defaultExtensions = ['scss', 'pug', 'img']; // расширения по умолчанию
+let defaultExtensions = ['scss', 'img']; // расширения по умолчанию
 let extensions = uniqueArray(defaultExtensions.concat(process.argv.slice(3)));  // добавим введенные при вызове расширения (если есть)
 let styleManagerPath = './src/scss/style.scss';
 let pugMixinsPath = './src/mixins.pug';

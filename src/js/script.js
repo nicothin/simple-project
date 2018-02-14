@@ -15,10 +15,10 @@ $(document).ready(function(){
 
 var mapPoints = [
   [
-    'Точка на карте',
+    'Point',
     59.95016094,
     30.31612718,
-    '<div class="some-class"><h2>Заголовок</h2><p>Лорем ипсум долор хрень какая-то, но видно, что это самая обычная разметка</p></div>'
+    '<div class="some-class"><h2>Header</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque.</p></div>'
   ],
 ];
 
@@ -70,15 +70,6 @@ function initMap() {
 
 // Функция проставляет маркеры карты
 function setMapMarkers(map) {
-  // Данные о картинке-маркере (в этом примере для всех маркеров одна картинка)
-  var image = {
-    url: 'http://s1.iconbird.com/ico/2013/8/425/w128h12813771935056.png',
-    // Эта картинка 128×128 пикселей.
-    // Точка «упора» нарисованного маркера по горизонтали — середина
-    // Точка «упора» нарисованного маркера по вертикали в 11 пикселях от нижнего края картинки
-    size: new google.maps.Size(128, 128),
-    anchor: new google.maps.Point(64, 117) // 128 / 2 (горизонталь) и 128 - 11 (вертикаль)
-  };
   // Обходим массив маркеров и проставляем каждый
   for (var i = 0; i < mapPoints.length; i++) {
     // Переменная с данными этой точки
@@ -87,7 +78,6 @@ function setMapMarkers(map) {
     var marker = new google.maps.Marker({
       position: {lat: point[1], lng: point[2]},
       map: map,
-      icon: image,
       title: point[0],
       html: point[3],
     });

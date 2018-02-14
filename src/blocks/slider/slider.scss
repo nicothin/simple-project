@@ -36,9 +36,9 @@
       content: '';
       width: 8px;
       height: 8px;
-      border-right: 1px solid #3e3e3e;
-      border-bottom: 1px solid #3e3e3e;
-      transform: rotate(135deg);
+      border-right: 1px solid #151515;
+      border-bottom: 1px solid #151515;
+      transform: translateX(20%) rotate(135deg);
 
       @media (min-width: $screen-sm) {
         width: 11px;
@@ -77,7 +77,7 @@
     }
 
     &:before {
-      transform: rotate(-45deg);
+      transform: translateX(-20%) rotate(-45deg);
     }
   }
 
@@ -88,16 +88,25 @@
   }
 
   .owl-dot {
-    width: 8px;
-    height: 8px;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: #c7c7c7;
-    border-radius: 100px;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
 
-  .active {
-    background-color: #222;
+    &:before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: #c7c7c7;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+
+    &.active:before,
+    &:hover:before {
+      background-color: #222;
+    }
   }
 
 }

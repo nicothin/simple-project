@@ -73,36 +73,39 @@
   </div>
 
   <footer class="page-footer">
-
     <div class="page-footer__inner">
-      <div class="page-footer__wrapper">
-        <p class="page-footer__text">This site was made on Tilda — a website builder that<br> helps to create a website without any code</p>
-        <a class="page-footer__button"><span>Create a website</span></a>
-      </div>
-        <div class="page-footer__link-wrapper">
-          <a class="page-footer__link" href="#">Submit a complaint</a>
-          <a class="page-footer__link" href="#">Submit a complaint</a>
-          <a class="page-footer__link" href="#">Submit a complaint</a>
-        </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-lg-6">
-            <form action="#" class="page-footer__form">
-              <div class="form-group">
-                <label for="name">Your name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-              </div>
-              <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
-              </div>
-            </form>
+      <form action="#" class="page-footer__form">
+        <div class="page-footer__form-inner">
+          <div class="page-footer__contact-wrap">
+            <h2 class="page-footer__contact-title">Contact Us</h2>
+            <ul class="page-footer__contact-list">
+              <li>
+                <a href="tel:+00000000000">+0 000 000 00 00</a>
+              </li>
+              <li>
+                <a href="mailto:some@mail.com">some@mail.com</a>
+              </li>
+            </ul>
+            <p class="page-footer__contact-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
-          <div class="col-xs-12 col-lg-6">
-            <div id="map" class="page-footer__map"></div>
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="text">Message</label>
+            <textarea class="form-control" id="text" placeholder="Enter message"></textarea>
+          </div>
+          <div class="page-footer__form-btns">
+            <button class="btn  btn-lg  btn-outline-light">Send</button>
           </div>
         </div>
-      </div>
+      </form>
+      <div id="map" class="page-footer__map"></div>
     </div>
   </footer>
 
