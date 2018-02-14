@@ -4938,7 +4938,8 @@ img {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  background-position: center center; }
+  background-position: center center;
+  background-color: #120001; }
   .page-header:before {
     content: '';
     position: absolute;
