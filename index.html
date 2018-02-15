@@ -14,7 +14,7 @@
 
 <body>
 
-  <header class="page-header">
+  <header class="page-header" id="page-header">
     <div class="dropdown  dropleft  page-header__lang">
       <button class="btn btn-outline-light dropdown-toggle" type="button" id="language-select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         English
@@ -30,7 +30,7 @@
       <h1 class="page-header__title">Bring your ideas to life</h1>
       <p class="page-header__descr">Anything you've even dreamed about is possible to realise just at the moment when you decided to win.</p>
     </div>
-    <svg class="page-header__arrow-svg" id="arrow-bottom" x="0px" y="0px" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592"><path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"></path></svg>
+    <a href="#first-content-block" class="page-header__arrow-wrap" id="arrow-bottom"><svg class="page-header__arrow-svg" x="0px" y="0px" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592"><path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"></path></svg></a>
   </header>
 
   <div class="block-text" id="first-content-block">
@@ -106,10 +106,87 @@
         </div>
       </form>
       <div id="map" class="page-footer__map"></div>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCTn_8pkid30xLMK_7_2rkI0_MoX3zIqQ&signed_in=true&callback=initMap"></script>
+      <script>
+        var mapPoints = [
+          [
+            'Point',
+            59.95016094,
+            30.31612718,
+            '<div class="some-class"><h2>Header</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque.</p></div>'
+          ],
+        ];
+
+        // Стилизация карты
+        // Подробнее о стилях: https://developers.google.com/maps/documentation/javascript/styling?hl=ru
+        var mapStyle = [{
+          featureType: 'all',
+          stylers: [{ saturation: -100 }]
+        }];
+
+        // Будущее инфоокно, возникающее по клику на маркере карты
+        var mapInfoWindow = null;
+
+        // Инициализация карты (вызывается после загрузки скрипта)
+        function initMap() {
+          // Найдем тег карты по id
+          var mapDiv = document.getElementById('map');
+          // Определим центр карты
+          var center = {lat: 59.95016094, lng: 30.31612718};
+          // Создадим объект карты
+          var map = new google.maps.Map(mapDiv, {
+            zoom: 13,
+            center: center,
+            disableDefaultUI: true,
+            styles: mapStyle
+          });
+          //  Вызовем функцию, которая расставит маркеры
+          setMapMarkers(map);
+          // Создадим объект инфоокна
+          mapInfoWindow = new google.maps.InfoWindow({
+            content: "loading...",
+            maxWidth: 200
+          });
+          // Начнем следить за ресайзом карты
+          map.addListener('resize', function() {
+            map.panTo(center); // Отцентруем
+          });
+          // Начнем следить за ресайзом окна (важно, если ресайз окна влияет на размер блока карты)
+          google.maps.event.addDomListener(window, 'resize', function(){
+            google.maps.event.trigger(map, 'resize'); // Вызовем событие ресайза карты
+          });
+          // Начнем следить за изменением центра, через 3 с. вернем центр по умолчанию
+          // map.addListener('center_changed', function() {
+          //   window.setTimeout(function() {
+          //     map.panTo(center);
+          //   }, 3000);
+          // });
+        }
+
+        // Функция проставляет маркеры карты
+        function setMapMarkers(map) {
+          // Обходим массив маркеров и проставляем каждый
+          for (var i = 0; i < mapPoints.length; i++) {
+            // Переменная с данными этой точки
+            var point = mapPoints[i];
+            // Создаем маркер карты
+            var marker = new google.maps.Marker({
+              position: {lat: point[1], lng: point[2]},
+              map: map,
+              title: point[0],
+              html: point[3],
+            });
+            // Начинаем следить за кликом на маркере
+            google.maps.event.addListener(marker, 'click', function () {
+              mapInfoWindow.setContent(this.html);
+              mapInfoWindow.open(map, this);
+            });
+          }
+        }
+      </script>
     </div>
   </footer>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCTn_8pkid30xLMK_7_2rkI0_MoX3zIqQ&signed_in=true&callback=initMap"></script>
   <script src="js/script.min.js"></script>
 </body>
 
