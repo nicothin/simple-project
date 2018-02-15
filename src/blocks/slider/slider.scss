@@ -20,7 +20,7 @@
   .owl-next {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% - 27px));
     width: 24px;
     height: 24px;
     display: flex;
