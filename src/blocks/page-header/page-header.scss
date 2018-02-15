@@ -91,25 +91,33 @@
     }
   }
 
-  &__arrow-svg {
+  &__arrow-wrap {
     position: absolute;
     z-index: 2;
     bottom: 15px;
     left: 50%;
-    fill: #fff;
-    cursor: pointer;
-    transform: translateX(-50%) scale(0.7);
-    transition: fill 0.3s;
-    animation: arrow-bottom 1.7s infinite ease;
+    padding: 10px;
+    transform: translateX(-50%);
+    transition: all 0.2s;
+
+    &:hover,
+    &:focus {
+
+      svg {
+        fill: #ddd;
+      }
+    }
 
     @media (min-width: $screen-sm) {
       bottom: 50px;
     }
+  }
 
-    &:hover {
-      fill: #ddd;
-    }
-
+  &__arrow-svg {
+    fill: #fff;
+    transform: scale(0.7);
+    transition: fill 0.3s;
+    animation: arrow-bottom 1.7s infinite ease;
   }
 
   &__lang {
@@ -122,18 +130,18 @@
 
 @keyframes arrow-bottom {
   0% {
-    transform: translateY(0) translateX(-50%) scale(0.7);
+    transform: translateY(0) scale(0.7);
   }
 
   50% {
-    transform: translateY(-7px) translateX(-50%) scale(0.7);
+    transform: translateY(-7px) scale(0.7);
   }
 
   55% {
-    transform: translateY(-7px) translateX(-50%) scale(0.7);
+    transform: translateY(-7px) scale(0.7);
   }
 
   100% {
-    transform: translateY(0) translateX(-50%) scale(0.7);
+    transform: translateY(0) scale(0.7);
   }
 }

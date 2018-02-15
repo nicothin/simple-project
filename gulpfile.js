@@ -65,6 +65,7 @@ let jsList = [
   './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
   './node_modules/owl.carousel/dist/owl.carousel.min.js',
   './node_modules/object-fit-images/dist/ofi.js',
+  './node_modules/ismobilejs/isMobile.min.js',
   dirs.source + '/js/script.js',
 ];
 
