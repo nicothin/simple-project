@@ -5040,7 +5040,10 @@ img {
   z-index: 1; }
   .owl-carousel .owl-stage {
     position: relative;
-    -ms-touch-action: pan-Y; }
+    -ms-touch-action: pan-Y;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden;
+    /* fix firefox animation glitch */ }
   .owl-carousel .owl-stage:after {
     content: ".";
     display: block;
@@ -5053,6 +5056,14 @@ img {
     overflow: hidden;
     /* fix for flashing background */
     -webkit-transform: translate3d(0px, 0px, 0px); }
+  .owl-carousel .owl-wrapper,
+  .owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0); }
   .owl-carousel .owl-item {
     position: relative;
     min-height: 1px;
@@ -5062,8 +5073,7 @@ img {
     -webkit-touch-callout: none; }
   .owl-carousel .owl-item img {
     display: block;
-    width: 100%;
-    -webkit-transform-style: preserve-3d; }
+    width: 100%; }
   .owl-carousel .owl-nav.disabled,
   .owl-carousel .owl-dots.disabled {
     display: none; }
@@ -5076,6 +5086,14 @@ img {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none; }
+  .owl-carousel .owl-nav button.owl-prev,
+  .owl-carousel .owl-nav button.owl-next,
+  .owl-carousel button.owl-dot {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit; }
   .owl-carousel.owl-loaded {
     display: block; }
   .owl-carousel.owl-loading {
@@ -5086,6 +5104,8 @@ img {
   .owl-carousel.owl-refresh .owl-item {
     visibility: hidden; }
   .owl-carousel.owl-drag .owl-item {
+    -ms-touch-action: none;
+        touch-action: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -6515,7 +6535,8 @@ img {
         font-size: 68px; }
       .page-header__descr {
         font-size: 22px;
-        max-width: 700px; }
+        max-width: 700px;
+        margin: auto; }
       .page-header__arrow-wrap {
         bottom: 50px; }
         .slider .owl-prev:before,
